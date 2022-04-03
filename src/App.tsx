@@ -1,9 +1,11 @@
-import React from 'react';
+import useInit from './hooks/use-init';
+import Router from './router';
+import { initAppAction } from './store/entities/app/actions';
 
-import SignIn from './SignIn';
+const App = () => {
+  useInit(initAppAction);
 
-function App() {
-  return <SignIn />;
-}
+  return <Router />;
+};
 
 export default App;
