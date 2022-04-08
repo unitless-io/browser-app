@@ -8,15 +8,16 @@ import { RootAction } from '../types/store/actions';
 
 import rootReducer from './reducers';
 import epics from './epics';
+import { createReduxHistory, routerMiddleware } from './history';
 
 const epicMiddleware = createEpicMiddleware<RootAction, RootAction, RootState>();
 const { middleware: requestsFactoryMiddleware } = createRequestsFactoryMiddleware();
 
-const middleware = [epicMiddleware, requestsFactoryMiddleware];
+const middleware = [epicMiddleware, requestsFactoryMiddleware, routerMiddleware];
 const enhancer = composeWithDevTools(applyMiddleware(...middleware));
 
-const store = createStore(rootReducer, enhancer);
+export const store = createStore(rootReducer, enhancer);
 
 epicMiddleware.run(epics);
 
-export default store;
+export const history = createReduxHistory(store);

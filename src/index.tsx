@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom';
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/material/styles';
 import { Provider } from 'react-redux';
-import { BrowserRouter } from 'react-router-dom';
+import { HistoryRouter as Router } from 'redux-first-history/rr6';
 
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import theme from './styles/theme';
-import store from './store';
+import { store, history } from './store';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -16,9 +16,9 @@ ReactDOM.render(
       {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
       <CssBaseline />
       <Provider store={store}>
-        <BrowserRouter>
+        <Router history={history}>
           <App />
-        </BrowserRouter>
+        </Router>
       </Provider>
     </ThemeProvider>
   </React.StrictMode>,

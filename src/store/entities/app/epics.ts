@@ -1,6 +1,7 @@
 import { combineEpics, Epic } from 'redux-observable';
 import { mergeMap, filter } from 'rxjs/operators';
 import { isActionOf } from 'typesafe-actions';
+import { push } from 'redux-first-history';
 
 import { RootAction } from '../../../types/store/actions';
 import { RootState } from '../../../types/store/state';
@@ -11,8 +12,7 @@ export const initAppEpic: Epic<RootAction, RootAction, RootState> = (action$, st
   action$.pipe(
     filter(isActionOf(initAppAction)),
     mergeMap(() => {
-      console.log('!!!!!!');
-      return [];
+      return [push('/sign-in')];
     })
   );
 
