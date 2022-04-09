@@ -1,5 +1,7 @@
 import { ActionType } from 'typesafe-actions';
 
-const apiActions = {};
+import { loadUserAction } from '../../../api/requests/user';
+
+const apiActions = { loadUserAction };
 
 export type ApiActions = ActionType<typeof apiActions>;
