@@ -10,7 +10,7 @@ import { ENDPOINTS } from '../api';
 import Copyright from '../components/Copyright';
 import { useRedirectToHome } from '../hooks/use-redirect-to-home';
 
-const handleOnClick = () => {
+const handleGoogleOnClick = () => {
   window.location.href = getServerPath(ENDPOINTS.SIGN_IN);
 };
 
@@ -34,7 +34,7 @@ export default function SignIn() {
           Sign in
         </Typography>
         <Box sx={{ mt: 1 }}>
-          <Button fullWidth variant="contained" sx={{ mt: 3, mb: 2 }} onClick={handleOnClick}>
+          <Button fullWidth variant="contained" sx={{ mt: 3, mb: 2 }} onClick={handleGoogleOnClick}>
             Google
           </Button>
         </Box>

@@ -8,7 +8,7 @@ const request = (): Promise<User | null> => api.get(ENDPOINTS.USER);
 export const {
   loadDataAction: loadUserAction,
   responseSelector: userResponseSelector,
-  requestRejectedAction: loadUserRejectedAction,
+  isLoadedSelector: isLoadedUserSelector,
 } = requestsFactory({
   request,
   stateRequestKey: 'user',
