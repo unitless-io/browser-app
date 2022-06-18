@@ -38,7 +38,7 @@ const Files = ({ appId }: { appId: string | undefined }) => {
         <Collapse in={openFiles[file._id]} timeout="auto" unmountOnExit>
           <div style={{ paddingLeft: '96px' }}>
             <Typography variant="h6">Functions</Typography>
-            <Functions appId={appId} fileId={file._id} />
+            <Functions fileId={file._id} />
           </div>
         </Collapse>
       </div>

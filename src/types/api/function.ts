@@ -4,6 +4,7 @@ export enum FunctionType {
 
 export interface Function {
   _id: string;
+  updatedAt: string;
   fileId: string;
   hashId: string;
   type: FunctionType;

@@ -7,22 +7,18 @@ import CodeIcon from '@mui/icons-material/Code';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import List from '@mui/material/List';
+import {Link} from 'react-router-dom';
 
-interface FunctionsProps {
-  appId: string | undefined;
-  fileId: string | undefined;
-}
-
-const Functions = ({ appId, fileId }: FunctionsProps) => {
+const Functions = ({ fileId }: { fileId: string }) => {
   const dispatch = useDispatch();
   const allFunctions = useSelector(functionsResponseSelector);
-  const functions = appId && fileId ? allFunctions({ appId, fileId }) : [];
+  const functions = fileId ? allFunctions(fileId) : [];
 
   useEffect(() => {
-    if (appId && fileId) {
-      dispatch(loadFunctionsAction({ appId, fileId }));
+    if (fileId) {
+      dispatch(loadFunctionsAction(fileId));
     }
-  }, [dispatch, appId, fileId]);
+  }, [dispatch, fileId]);
 
   return <List disablePadding={true}>
     {functions.map((func) =>
@@ -31,7 +27,10 @@ const Functions = ({ appId, fileId }: FunctionsProps) => {
           <ListItemIcon>
             <CodeIcon />
           </ListItemIcon>
-          <ListItemButton>
+          <ListItemButton
+            component={Link}
+            to={`/function/${func._id}`}
+          >
             <ListItemText primary={`${func.name}`} />
           </ListItemButton>
         </ListItem>

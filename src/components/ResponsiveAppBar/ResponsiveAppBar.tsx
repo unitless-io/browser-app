@@ -16,6 +16,7 @@ import { useSelector } from 'react-redux';
 import { getServerPath } from '../../utils/get-server-path';
 import { ENDPOINTS } from '../../api';
 import { userResponseSelector } from '../../api/requests/user';
+import Link from '@mui/material/Link';
 
 // const pages = ['Products', 'Pricing', 'Blog'];
 
@@ -48,9 +49,11 @@ const ResponsiveAppBar = () => {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Typography variant="h6" noWrap component="div" sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}>
-            UNITLESS
-          </Typography>
+          <Link href="/" color="inherit" underline="none" >
+            <Typography variant="h6" noWrap component="div" sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}>
+              UNITLESS
+            </Typography>
+          </Link>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             {/* <IconButton

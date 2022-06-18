@@ -3,12 +3,7 @@ import { requestsFactory } from 'redux-requests-factory';
 import type { Function } from '../../../types/api/function';
 import { api, ENDPOINTS } from '../../index';
 
-interface FunctionsRequest {
-  appId: string;
-  fileId: string;
-}
-
-const request = ({ appId, fileId }: FunctionsRequest): Promise<Function[]> => api.get(ENDPOINTS.FUNCTIONS(appId, fileId));
+const request = (fileId: string): Promise<Function[]> => api.get(ENDPOINTS.FUNCTIONS(fileId));
 
 export const {
   loadDataAction: loadFunctionsAction,
@@ -17,6 +12,6 @@ export const {
 } = requestsFactory({
   request,
   stateRequestKey: 'functions',
-  serializeRequestParameters: ({ appId, fileId }: FunctionsRequest) => `${appId}-${fileId}`,
+  serializeRequestParameters: (fileId: string) => `${fileId}`,
   transformResponse: (response: Function[] | undefined) => response || [],
 });
