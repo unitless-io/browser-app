@@ -1,12 +1,14 @@
 import {useDispatch, useSelector} from 'react-redux';
 import {useEffect} from 'react';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText'
-import ListItemIcon from '@mui/material/ListItemIcon';
-import Checkbox from '@mui/material/Checkbox';
+import { DataGrid, GridColDef } from '@mui/x-data-grid';
+import prop from 'ramda/src/prop';
 
 import { functionCallsResponseSelector, loadFunctionCallsAction } from '../../api/requests/function-calls';
+
+const columns: GridColDef[] = [
+  { field: 'args', headerName: 'Arguments', flex: 3 },
+  { field: 'result', headerName: 'Returned', flex: 1 },
+];
 
 const FunctionCalls = ({ funcId }: { funcId: string | undefined }) => {
   const dispatch = useDispatch();
@@ -19,18 +21,7 @@ const FunctionCalls = ({ funcId }: { funcId: string | undefined }) => {
     }
   }, [dispatch, funcId]);
 
-  return <List disablePadding={true}>
-    {functionCalls.map((call) =>
-      <div key={call._id}>
-        <ListItem>
-          <ListItemIcon>
-            <Checkbox />
-          </ListItemIcon>
-          <ListItemText primary={`Args: ${call.args}, result: ${call.result}`} />
-        </ListItem>
-      </div>
-    )}
-  </List>;
+  return <DataGrid columns={columns} rows={functionCalls} getRowId={prop('_id')} autoHeight checkboxSelection />;
 };
 
 export default FunctionCalls;

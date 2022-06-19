@@ -29,7 +29,7 @@ export default function Apps(props: any) {
       <div key={app.token}>
         <ListItem>
           <ListItemIcon>
-            <img src="/js-icon.svg" />
+            <img src="/js-icon.svg" alt="javascript application icon" />
           </ListItemIcon>
           <ListItemButton onClick={() => toggleApp({ ...openApps, [app._id]: !openApps[app._id] })}>
             <ListItemText primary={`Application ${app.token}`} />

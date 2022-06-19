@@ -10,7 +10,7 @@ const Main = () => {
   return (
     <>
       <Toolbar id="back-to-top-anchor" />
-      <Container>
+      <Container maxWidth="lg">
         <Typography variant="h4">Applications</Typography>
         <Box>
           <Apps />
