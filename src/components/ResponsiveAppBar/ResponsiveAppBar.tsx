@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -11,12 +13,10 @@ import Avatar from '@mui/material/Avatar';
 // import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import { useSelector } from 'react-redux';
 
 import { getServerPath } from '../../utils/get-server-path';
 import { ENDPOINTS } from '../../api';
 import { userResponseSelector } from '../../api/requests/user';
-import Link from '@mui/material/Link';
 
 // const pages = ['Products', 'Pricing', 'Blog'];
 
@@ -50,7 +50,7 @@ const ResponsiveAppBar = () => {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           {/* replace with react router link */}
-          <Link href="/" color="inherit" underline="none" >
+          <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
             <Typography variant="h6" noWrap component="div" sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}>
               UNITLESS
             </Typography>

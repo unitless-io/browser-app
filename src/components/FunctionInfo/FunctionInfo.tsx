@@ -23,7 +23,7 @@ const FunctionInfo = ({ funcId }: { funcId: string | undefined }) => {
       <Typography component="span" variant="h5"> function</Typography>
     </Box>
     <Box>
-      <Typography variant="body1">{ func ? `Last called: ${new Date(func.updatedAt).toLocaleString()}` : null }</Typography>
+      <Typography variant="body1">{ func ? `Last updated: ${new Date(func.updatedAt).toLocaleString()}` : null }</Typography>
     </Box>
   </Paper> : null;
 };

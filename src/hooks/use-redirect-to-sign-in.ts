@@ -9,7 +9,6 @@ export const useRedirectToSignIn = () => {
   const user = useSelector(userResponseSelector);
   const isLoadedUser = useSelector(isLoadedUserSelector);
   const navigate = useNavigate();
-  console.log(user, isLoadedUser);
   useEffect(() => {
     if (isLoadedUser && !user) {
       navigate(ROUTES.SIGN_IN);
