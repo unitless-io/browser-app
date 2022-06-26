@@ -7,6 +7,8 @@ const instance = axios.create({
   withCredentials: true,
 });
 
+const extractFileName = (str?: string): string => str?.match(/.*filename=(.*\.(j|t)sx?).*/)?.[1] || '';
+
 export const api = {
   get: <D, R>(url: string, data?: D, config?: AxiosRequestConfig): Promise<R> =>
     instance
@@ -16,6 +18,17 @@ export const api = {
         ...config,
       })
       .then(({ data }) => data),
+  getDownloadUrl: <D>(url: string, data?: D, config?: AxiosRequestConfig): Promise<{ file: string, fileName: string }> =>
+    instance
+      .get(url, {
+        params: data,
+        responseType: 'blob',
+        ...config,
+      })
+      .then(({ data, headers }) => ({
+        file: window.URL.createObjectURL(new Blob([data])),
+        fileName: extractFileName(headers['content-disposition'])
+      })),
   post: <D, R>(url: string, data?: D, config?: AxiosRequestConfig): Promise<R> =>
     instance.post(url, data, config).then(({ data }) => data),
   patch: <D, R>(url: string, data?: D, config?: AxiosRequestConfig): Promise<R> =>

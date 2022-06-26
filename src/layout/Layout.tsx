@@ -10,7 +10,7 @@ export default function Layout(props: any) {
   const user = useSelector(userResponseSelector);
 
   if (!user) {
-    return null;
+    return <>{ props.children }</>;
   }
 
   return (
