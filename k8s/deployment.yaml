@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: 'data-catcher-app'
+  namespace: 'unitless'
+spec:
+  selector:
+    matchLabels:
+      app: 'data-catcher-app'
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: 'data-catcher-app'
+    spec:
+      containers:
+        - image: $REPOSITORY_URI:latest
+          imagePullPolicy: Always
+          name: 'data-catcher-app'
+          ports:
+            - containerPort: 80
