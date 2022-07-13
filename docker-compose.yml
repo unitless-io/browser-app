@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  web:
+    image: data-catcher-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: data-catcher-app
+    environment:
+      - NODE_ENV=production
+    ports:
+      - '80:80'
+    restart: always
+

@@ -23,8 +23,7 @@ RUN npm run build
 #
 FROM nginx:1.20
 
-COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
-
 ## We just need the build to execute the command
 COPY --from=builder /usr/src/app/build /usr/share/nginx/html/
 
+COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
