@@ -1,4 +1,4 @@
-import {useSelector} from 'react-redux';
+import { useSelector } from 'react-redux';
 import Typography from '@mui/material/Typography';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
@@ -10,7 +10,7 @@ import Paper from '@mui/material/Paper';
 import Looks3Icon from '@mui/icons-material/Looks3';
 import Looks4Icon from '@mui/icons-material/Looks4';
 
-import {userResponseSelector} from '../../api/requests/user';
+import { userResponseSelector } from '../../api/requests/user';
 
 export const GettingStarted = ({ title }: { title: string }) => {
   const user = useSelector(userResponseSelector);
@@ -23,7 +23,7 @@ export const GettingStarted = ({ title }: { title: string }) => {
             <Looks1Icon />
           </ListItemIcon>
           <ListItemText>
-            <Typography>Run "npm install --save unitless-loader"</Typography>
+            <Typography>Run "npm install --save @unitless-io/loader"</Typography>
           </ListItemText>
         </ListItem>
         <ListItem>
@@ -35,7 +35,27 @@ export const GettingStarted = ({ title }: { title: string }) => {
           </ListItemText>
         </ListItem>
         <Paper sx={{ padding: 2, backgroundColor: '#dbdbdb', maxWidth: '600px' }}>
-          &#123;<br/>&nbsp;&nbsp;test:&nbsp;/\.js$/,<br/>&nbsp;&nbsp;use:&nbsp;[<br/>&nbsp;&nbsp;&nbsp;&nbsp;&#123;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;loader:&nbsp;'unitless-loader',<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options:&nbsp;&#123;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;token:&nbsp;'{user?.appToken}',<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&#125;,<br/>&nbsp;&nbsp;],<br/>&#125;
+          &#123;
+          <br />
+          &nbsp;&nbsp;test:&nbsp;/\.js$/,
+          <br />
+          &nbsp;&nbsp;use:&nbsp;[
+          <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&#123;
+          <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;loader:&nbsp;'@unitless-io/loader',
+          <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options:&nbsp;&#123;
+          <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;token:&nbsp;'{user?.appToken}',
+          <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;,
+          <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&#125;,
+          <br />
+          &nbsp;&nbsp;],
+          <br />
+          &#125;
         </Paper>
         <ListItem>
           <ListItemIcon>
@@ -46,7 +66,13 @@ export const GettingStarted = ({ title }: { title: string }) => {
           </ListItemText>
         </ListItem>
         <Paper sx={{ padding: 2, backgroundColor: '#dbdbdb', maxWidth: '600px' }}>
-          //&nbsp;@test-next-line<br/>export&nbsp;const&nbsp;doSomethingCool&nbsp;=&nbsp;()&nbsp;=&#62;&nbsp;&#123;<br/>&nbsp;&nbsp;...<br/>&#125;;
+          //&nbsp;@test-next-line
+          <br />
+          export&nbsp;const&nbsp;doSomethingCool&nbsp;=&nbsp;()&nbsp;=&#62;&nbsp;&#123;
+          <br />
+          &nbsp;&nbsp;...
+          <br />
+          &#125;;
         </Paper>
         <ListItem>
           <ListItemIcon>
