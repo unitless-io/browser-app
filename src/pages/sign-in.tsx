@@ -9,6 +9,7 @@ import { getServerPath } from '../utils/get-server-path';
 import { ENDPOINTS } from '../api';
 import Copyright from '../components/Copyright';
 import { useRedirectToHome } from '../hooks/use-redirect-to-home';
+import LegalLinks from '../components/LegalLinks';
 
 const handleGoogleOnClick = () => {
   window.location.href = getServerPath(ENDPOINTS.SIGN_IN);
@@ -39,6 +40,7 @@ export default function SignIn() {
           </Button>
         </Box>
       </Box>
+      <LegalLinks sx={{ mt: 8, mb: 4 }} />
       <Copyright sx={{ mt: 8, mb: 4 }} />
     </Container>
   );
