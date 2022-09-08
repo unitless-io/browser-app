@@ -17,12 +17,13 @@ import {userResponseSelector} from '../../api/requests/user';
 import {appsResponseSelector, loadAppsAction} from '../../api/requests/apps';
 import Files from '../Files/Files';
 import {GettingStarted} from '../GettingStarted';
+import useLocalStorageState from '../../hooks/use-local-storage-state';
 
 export default function Apps(props: any) {
   const dispatch = useDispatch();
   const user = useSelector(userResponseSelector);
   const apps = useSelector(appsResponseSelector);
-  const [openApps, toggleApp] = useState<Record<string, boolean>>({});
+  const [openApps, toggleApp] = useLocalStorageState<Record<string, boolean>>('unitless-open-apps', {});
 
   useEffect(() => {
     if (user?.appToken) {

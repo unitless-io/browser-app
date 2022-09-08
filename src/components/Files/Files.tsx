@@ -11,12 +11,13 @@ import Collapse from '@mui/material/Collapse';
 
 import {filesResponseSelector, loadFilesAction} from '../../api/requests/files';
 import Functions from '../Functions/Functions';
+import useLocalStorageState from '../../hooks/use-local-storage-state';
 
 const Files = ({ appId }: { appId: string | undefined }) => {
   const dispatch = useDispatch();
   const allFiles = useSelector(filesResponseSelector);
   const appFiles = appId ? allFiles(appId) : [];
-  const [openFiles, toggleFile] = useState<Record<string, boolean>>({});
+  const [openFiles, toggleFile] = useLocalStorageState<Record<string, boolean>>('unitless-open-files', {});
 
   useEffect(() => {
     if (appId) {
