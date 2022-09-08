@@ -1,6 +1,6 @@
-import {useCallback} from 'react';
-import {useSelector} from 'react-redux';
-import {useSearchParams} from 'react-router-dom';
+import { useCallback } from 'react';
+import { useSelector } from 'react-redux';
+import { useSearchParams } from 'react-router-dom';
 import propEq from 'ramda/src/propEq';
 import toString from 'ramda/src/toString';
 import Modal from '@mui/material/Modal';
@@ -28,6 +28,10 @@ const style = {
   p: 4,
 };
 
+function deserialize(serializedJavascript: string) {
+  return eval('(' + serializedJavascript + ')');
+}
+
 const FunctionCallModal = ({ funcId }: { funcId: string | undefined }) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const funcCallId = searchParams.get('callId');
@@ -39,36 +43,42 @@ const FunctionCallModal = ({ funcId }: { funcId: string | undefined }) => {
   const allFunctionsCalls = useSelector(functionCallsResponseSelector);
   const functionCalls = funcId ? allFunctionsCalls(funcId) : [];
   const functionCall = functionCalls.find(propEq('_id', funcCallId));
-  const functionCallArgs: any[] = functionCall ? JSON.parse(functionCall.args) : [];
+  const functionCallArgs: any[] = functionCall ? deserialize(functionCall.args) : [];
 
-  return <Modal open={!!funcCallId} onClose={onClose} disableScrollLock>
-    <Box sx={style}>
-      <Stack justifyContent="center" alignItems="flex-start">
-        <Typography variant="h5" sx={{ alignSelf: 'center' }}>Function call</Typography>
-        <Typography variant="subtitle2" sx={{ alignSelf: 'center' }}>
-          Time: {functionCall ? new Date(functionCall.updatedAt).toLocaleString() : null}
-        </Typography>
-        <Typography variant="h6" sx={{ marginTop: 2 }}>Arguments</Typography>
-        <List disablePadding={true}>
-          { functionCallArgs.map((arg: any, index: number) => (
-            <ListItem key={index}>
-              <ListItemIcon>
-                <InputIcon />
-              </ListItemIcon>
-              <ListItemText primary={toString(arg)} />
-            </ListItem>
-          ))}
-        </List>
-        <Typography variant="h6">Result</Typography>
-        <ListItem>
-          <ListItemIcon>
-            <OutboxIcon />
-          </ListItemIcon>
-          <ListItemText primary={functionCall?.result} />
-        </ListItem>
-      </Stack>
-    </Box>
-  </Modal>;
+  return (
+    <Modal open={!!funcCallId} onClose={onClose} disableScrollLock>
+      <Box sx={style}>
+        <Stack justifyContent="center" alignItems="flex-start">
+          <Typography variant="h5" sx={{ alignSelf: 'center' }}>
+            Function call
+          </Typography>
+          <Typography variant="subtitle2" sx={{ alignSelf: 'center' }}>
+            Time: {functionCall ? new Date(functionCall.updatedAt).toLocaleString() : null}
+          </Typography>
+          <Typography variant="h6" sx={{ marginTop: 2 }}>
+            Arguments
+          </Typography>
+          <List disablePadding={true}>
+            {functionCallArgs.map((arg: any, index: number) => (
+              <ListItem key={index}>
+                <ListItemIcon>
+                  <InputIcon />
+                </ListItemIcon>
+                <ListItemText primary={toString(arg)} />
+              </ListItem>
+            ))}
+          </List>
+          <Typography variant="h6">Result</Typography>
+          <ListItem>
+            <ListItemIcon>
+              <OutboxIcon />
+            </ListItemIcon>
+            <ListItemText primary={functionCall?.result} />
+          </ListItem>
+        </Stack>
+      </Box>
+    </Modal>
+  );
 };
 
 export default FunctionCallModal;
