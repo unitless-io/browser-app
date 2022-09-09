@@ -10,6 +10,7 @@ import Terms from '../pages/terms';
 import Error from '../pages/error';
 import { ROUTES } from './constants';
 import Layout from '../layout';
+import Payments from '../pages/payments';
 
 const Router: FC = () => {
   return (
@@ -21,6 +22,7 @@ const Router: FC = () => {
         <Route path={ROUTES.FUNCTION} element={<Function />} />
         <Route path={ROUTES.PRIVACY_POLICY} element={<PrivacyPolicy />} />
         <Route path={ROUTES.TERMS} element={<Terms />} />
+        <Route path={ROUTES.PAYMENTS} element={<Payments />} />
 
         <Route path="*" element={<Error />} />
       </Routes>

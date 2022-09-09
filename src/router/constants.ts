@@ -5,6 +5,7 @@ export enum ROUTES {
   LOGIN_ERROR = '/login-error',
   HOME = '/',
   FUNCTION = '/function/:funcId',
+  PAYMENTS = '/payments',
 }
 
 export const NO_AUTH_ROUTES = new Set<string>([ROUTES.PRIVACY_POLICY, ROUTES.TERMS]);
