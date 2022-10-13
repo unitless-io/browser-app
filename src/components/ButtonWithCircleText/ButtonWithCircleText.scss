@@ -1,0 +1,70 @@
+@import '../../styles/style.scss';
+
+@mixin circle-text ($num-letters) {
+  $angle-per-char: 360deg / $num-letters;
+  @for $i from 0 to $num-letters {
+    &.char#{$i} {
+      transform: rotate($angle-per-char * $i);
+    }
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.button-with-circle-text {
+  width: 250px;
+  height: 250px;
+  transition: all 0.25s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  position: absolute;
+  left: -110px;
+  bottom: -45px;
+
+  .MuiIconButton-root {
+    width: 250px;
+    height: 250px;
+    background: white !important;
+  }
+
+  .MuiSvgIcon-root {
+    width: 78px;
+    height: 78px;
+    color: black;
+  }
+
+  .circle-text {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    pointer-events: none;
+
+    animation: spin 30s linear infinite;
+    -webkit-animation: spin 30s linear infinite;
+
+    .MuiTypography-root {
+      display: flex;
+      justify-content: center;
+      text-transform: none;
+
+      span {
+        position: absolute;
+        height: 125px;
+        transform-origin: bottom center;
+        @include circle-text(57);
+     }
+    }
+  }
+}

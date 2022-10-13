@@ -1,0 +1,54 @@
+@import '../../styles/style.scss';
+
+.footer {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  height: 240px;
+
+  .responsive-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  .logo {
+    position: absolute;
+    left: 0;
+  }
+
+  .content-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .social-media-links {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    gap: 22px;
+  }
+
+  .MuiButton-root {
+    background-color: black;
+    color: white;
+    border-color: white;
+    border-radius: 60px;
+    width: 210px;
+    height: 56px;
+    box-shadow: none;
+
+    &:hover {
+      border-color: white;
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .footer {
+    height: 195px;
+  }
+}

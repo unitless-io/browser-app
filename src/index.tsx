@@ -9,6 +9,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import theme from './styles/theme';
 import { store, history } from './store';
+import './styles/style.scss';
 
 ReactDOM.render(
   <React.StrictMode>

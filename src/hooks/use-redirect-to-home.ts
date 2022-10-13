@@ -11,7 +11,7 @@ export const useRedirectToHome = () => {
 
   useEffect(() => {
     if (user) {
-      navigate(ROUTES.HOME);
+      navigate(ROUTES.APPLICATIONS);
     }
   }, [navigate, user]);
 };

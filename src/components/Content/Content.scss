@@ -1,0 +1,67 @@
+@import '../../styles/style.scss';
+
+.content {
+  display: flex;
+  justify-content: center;
+
+  .content-block {
+    position: relative;
+  }
+
+  img {
+    &.shadowed-image {
+      box-shadow: 0px 30px 45px rgba(22, 22, 22, 0.1);
+    }
+  }
+
+  .cards {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 45px 40px;
+
+    .card {
+      width: calc(50% - 20px);
+      min-height: 160px;
+    }
+
+    @media screen and (max-width: 576px) {
+      .card {
+        width: 100%;
+      }
+    }
+  }
+
+  .MuiButton-root {
+    background-color: $lightBlue;
+    border-radius: 60px;
+    width: 251px;
+    height: 60px;
+    box-shadow: 0px 10px 45px rgba(124, 179, 210, 0.3);
+
+    &:hover {
+      background-color: darken($lightBlue, 5%) !important;
+      box-shadow: 0px 10px 45px rgba(124, 179, 210, 0.3);
+    }
+
+    &.large {
+      width: 321px;
+      height: 76px;
+    }
+
+    &.reversed {
+      background-color: white;
+      color: $lightBlue;
+
+      &:hover {
+        background-color: darken(white, 5%) !important;
+        box-shadow: 0px 10px 45px rgba(124, 179, 210, 0.3);
+      }
+    }
+
+    &.circle {
+      border-radius: 100%;
+      width: 219px;
+      height: 219px;
+    }
+  }
+}

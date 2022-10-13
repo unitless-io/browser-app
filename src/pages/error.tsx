@@ -7,7 +7,7 @@ export default function Error() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    navigate(ROUTES.HOME);
+    navigate(ROUTES.APPLICATIONS);
   }, [navigate]);
 
   return null;

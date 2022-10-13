@@ -4,6 +4,7 @@ export enum ROUTES {
   TERMS = '/terms',
   LOGIN_ERROR = '/login-error',
   HOME = '/',
+  APPLICATIONS = '/applications',
   FUNCTION = '/function/:funcId',
   PAYMENTS = '/payments',
 }
