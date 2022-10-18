@@ -28,8 +28,10 @@
   }
 
   position: absolute;
-  left: -110px;
-  bottom: -45px;
+  // left: -110px;
+  // bottom: -45px;
+  left: -80px;
+  bottom: -75px;
 
   .MuiIconButton-root {
     width: 250px;
@@ -38,8 +40,8 @@
   }
 
   .MuiSvgIcon-root {
-    width: 78px;
-    height: 78px;
+    width: 56px;
+    height: 56px;
     color: black;
   }
 
@@ -65,6 +67,122 @@
         transform-origin: bottom center;
         @include circle-text(57);
      }
+    }
+  }
+}
+
+@media screen and (min-width: 1551px) {
+  .button-with-circle-text {
+    width: 300px;
+    height: 300px;
+    left: -155px;
+    bottom: -85px;
+
+    .MuiIconButton-root {
+      width: 300px;
+      height: 300px;
+    }
+
+    .MuiSvgIcon-root {
+      width: 78px;
+      height: 78px;
+    }
+
+    .circle-text {
+      .MuiTypography-root {
+        font-size: 2rem;
+
+        span {
+          height: 150px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+  .button-with-circle-text {
+    width: 210px;
+    height: 210px;
+    left: -65px;
+    bottom: -55px;
+
+    .MuiIconButton-root {
+      width: 210px;
+      height: 210px;
+    }
+
+    .MuiSvgIcon-root {
+      width: 55px;
+      height: 55px;
+    }
+
+    .circle-text {
+      .MuiTypography-root {
+        span {
+          height: 105px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 577px) and (max-width: 1024px) {
+  .button-with-circle-text {
+    width: 180px;
+    height: 180px;
+    position: relative;
+    left: 0;
+    bottom: 100px;
+    margin: auto;
+
+    .MuiIconButton-root {
+      width: 180px;
+      height: 180px;
+    }
+
+    .MuiSvgIcon-root {
+      width: 35px;
+      height: 35px;
+    }
+
+    .circle-text {
+      .MuiTypography-root {
+        font-size: 1.1rem;
+
+        span {
+          height: 90px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .button-with-circle-text {
+    width: 120px;
+    height: 120px;
+    left: calc(100%/2 - 56px);
+    bottom: -45px;
+
+    .MuiIconButton-root {
+      width: 120px;
+      height: 120px;
+    }
+
+    .MuiSvgIcon-root {
+      width: 27px;
+      height: 27px;
+    }
+
+    .circle-text {
+      .MuiTypography-root {
+        font-size: 0.75rem;
+
+        span {
+          height: 60px;
+        }
+      }
     }
   }
 }

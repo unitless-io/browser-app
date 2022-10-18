@@ -9,3 +9,11 @@
     gap: 7px;
   }
 }
+
+@media screen and (max-width: 576px) {
+  .header {
+    .MuiTypography-root {
+      display: none;
+    }
+  }
+}

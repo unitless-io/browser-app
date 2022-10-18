@@ -3,7 +3,10 @@ import { ReactComponent as MailIcon } from '../../assets/images/icons/mail-icon.
 import { ReactComponent as TwitterIcon } from '../../assets/images/icons/twitter-icon.svg';
 import { ReactComponent as WhatsappIcon } from '../../assets/images/icons/whatsapp-icon.svg';
 
-import { Button, Link, Typography } from '@mui/material';
+import { Link, Typography } from '@mui/material';
+import RouterLink from '../RouterLink';
+import RouterButton from '../RouterButton';
+import { ROUTES } from '../../router/constants';
 
 import './Footer.scss';
 
@@ -16,8 +19,8 @@ export default function Footer() {
         </div>
 
         <div className='content-links'>
-          <Link
-            href='/privacy-policy'
+          <RouterLink
+            to={ROUTES.PRIVACY_POLICY}
             underline='none'
             color='white'
             className='mb-8'
@@ -25,9 +28,9 @@ export default function Footer() {
             <Typography variant='body2'>
               PRIVACY POLICY
             </Typography>
-          </Link>
-          <Link
-            href='/terms'
+          </RouterLink>
+          <RouterLink
+            to={ROUTES.TERMS}
             underline='none'
             color='white'
             className='mb-20'
@@ -35,26 +38,26 @@ export default function Footer() {
             <Typography variant='body2'>
               TERMS OF USE
             </Typography>
-          </Link>
-          <Button
+          </RouterLink>
+          <RouterButton
+            to={ROUTES.SIGN_IN}
             variant='outlined'
-            href='/sign-in'
           >
             <Typography variant='body2'>
               REGISTER
             </Typography>
-          </Button>
+          </RouterButton>
         </div>
 
         <div className='social-media-links'>
           <Link href='#'>
-            <MailIcon />
+            <MailIcon className='social-media-icon'/>
           </Link>
           <Link href='#'>
-            <TwitterIcon />
+            <TwitterIcon className='social-media-icon'/>
           </Link>
           <Link href='#'>
-            <WhatsappIcon />
+            <WhatsappIcon className='social-media-icon'/>
           </Link>
         </div>
       </div>

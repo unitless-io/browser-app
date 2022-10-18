@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import { HistoryRouter as Router } from 'redux-first-history/rr6';
 
 import App from './App';
+import ScrollToTop from './components/ScrollToTop';
 import reportWebVitals from './reportWebVitals';
 import theme from './styles/theme';
 import { store, history } from './store';
@@ -18,6 +19,7 @@ ReactDOM.render(
       <CssBaseline />
       <Provider store={store}>
         <Router history={history}>
+          <ScrollToTop />
           <App />
         </Router>
       </Provider>

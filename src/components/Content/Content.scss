@@ -21,13 +21,7 @@
 
     .card {
       width: calc(50% - 20px);
-      min-height: 160px;
-    }
-
-    @media screen and (max-width: 576px) {
-      .card {
-        width: 100%;
-      }
+      height: 160px;
     }
   }
 
@@ -62,6 +56,62 @@
       border-radius: 100%;
       width: 219px;
       height: 219px;
+    }
+  }
+
+  .lg-mt-50 {
+    margin-top: 50px;
+  }
+
+  .lg-mb-16 {
+    margin-bottom: 16px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .content {
+    .cards {
+      row-gap: 20px;
+
+      .card {
+        width: 100%;
+        height: 120px;
+
+        &:nth-last-child(-n+4) {
+          display: none;
+        }
+      }
+    }
+
+    .MuiButton-root {
+      width: 245px;
+      height: 58px;
+
+      &.large {
+        width: 245px;
+        height: 58px;
+      }
+
+      &.circle {
+        width: 130px;
+        height: 130px;
+      }
+    }
+
+    .section-container:not(:first-child) {
+      .content-block {
+        .image-container {
+          display: none;
+        }
+      }
+    }
+
+    .sm-mt-25 {
+      margin-top: 25px;
+    }
+
+    .sm-mb-10 {
+      margin-bottom: 10px !important;
     }
   }
 }

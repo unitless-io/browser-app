@@ -10,12 +10,17 @@ interface Props extends CardProps {
 const cardStyles = {
   height: '100%',
   padding: '21px',
+  ['@media (max-width: 576px)']: {
+    padding: '15px 20px',
+    borderLeftWidth: '9px',
+    boxShadow: '0px 5px 25px rgba(0, 0, 0, 0.1)',
+  },
   borderRadius: '0px',
   boxShadow: '0px 30px 45px rgba(0, 0, 0, 0.1)',
 };
 
 const activeCard = {
-  borderLeft: `32px solid ${colors.lightBlue}`
+  borderLeft: `32px solid ${colors.lightBlue}`,
 };
 
 const inactiveCard = {

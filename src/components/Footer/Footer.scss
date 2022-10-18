@@ -5,6 +5,7 @@
   justify-content: center;
   background-color: black;
   height: 240px;
+  margin-top: 140px;
 
   .responsive-container {
     display: flex;
@@ -50,5 +51,38 @@
 @media screen and (max-width: 576px) {
   .footer {
     height: 195px;
+    margin-top: 115px;
+
+    .responsive-container {
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: space-between;
+      align-items: center;
+      padding: 25px 0;
+    }
+
+    .social-media-links {
+      position: relative;
+      gap: 35px;
+
+      .MuiTypography-root {
+        width: 27px;
+        height: 27px;
+      }
+    }
+
+    .social-media-icon {
+      height: 100%;
+      width: 100%;
+    }
+
+    .logo {
+      display: none;
+    }
+
+    .MuiButton-root {
+      width: 145px;
+      height: 35px;
+    }
   }
 }

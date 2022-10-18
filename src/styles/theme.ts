@@ -9,49 +9,68 @@ const poppinsFontFamily = {
   fontWeight: 600,
 };
 
-const helveticaFontFamily = {
+const robotoFontFamily = {
   fontFamily: [
-    'Helvetica',
+    'Roboto',
     'Arial',
     'sans-serif',
   ].join(','),
-  fontWeight: 400,
 };
 
 // A custom theme for this app
 const theme = createTheme({
   palette: {},
   typography: {
-    ...helveticaFontFamily,
+    ...robotoFontFamily,
 
     h1: {
       ...poppinsFontFamily,
-      fontSize: '128px',
-      lineHeight: '192px',
+      fontSize: '8rem',
+      lineHeight: '12rem',
+      ['@media (max-width: 576px)']: {
+        fontSize: '48px',
+        lineHeight: '72px',
+      }
     },
 
     h3: {
       ...poppinsFontFamily,
-      fontSize: '36px',
-      lineHeight: '54px',
+      fontSize: '2.25rem',
+      lineHeight: '3.375rem',
+      ['@media (max-width: 576px)']: {
+        fontSize: '24px',
+        lineHeight: '36px',
+      }
     },
 
     body1: {
-      ...helveticaFontFamily,
-      fontSize: '20px',
-      lineHeight: '27.6px',
+      ...robotoFontFamily,
+      fontSize: '1.25rem',
+      lineHeight: '1.725rem',
+      ['@media (max-width: 576px)']: {
+        fontSize: '16px',
+        lineHeight: '22px',
+      }
     },
 
     body2: {
-      ...helveticaFontFamily,
-      fontSize: '15px',
-      lineHeight: '21px',
+      ...robotoFontFamily,
+      fontSize: '1rem',
+      lineHeight: '1.3rem',
+      ['@media (max-width: 576px)']: {
+        fontSize: '12px',
+        lineHeight: '17px',
+      }
     },
 
     button: {
-      ...helveticaFontFamily,
-      fontSize: '24px',
-      lineHeight: '33px',
+      ...robotoFontFamily,
+      fontSize: '1.5rem',
+      lineHeight: '2.1rem',
+      ['@media (max-width: 576px)']: {
+        fontSize: '18px',
+        lineHeight: '25px',
+      }
     },
  },
 });
