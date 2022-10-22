@@ -1,5 +1,7 @@
 import './Content.scss';
-import screenshot1 from '../../assets/images/screenshots/screenshot1.png';
+import screenshot1 from '../../assets/images/screenshots/screenshot-01.jpg';
+import screenshot2 from '../../assets/images/screenshots/screenshot-02.png';
+import screenshot3 from '../../assets/images/screenshots/screenshot-03.jpg';
 import { Typography, Button } from '@mui/material';
 
 import ButtonWithCircleText from '../ButtonWithCircleText';
@@ -25,17 +27,19 @@ export default function Content() {
                   Create unit tests based on real data in a few clicks to make your application bulletproof.<br/>Don't waste your time on a routine
                 </Typography>
                 <Typography variant='body1'>
-                  A Webpack plugin to take care of your JavaScript projects<br/> <span className='gray'>// Typescript support is coming</span>
+                  <span className='semi-bold'>A Webpack plugin to take care of your JavaScript projects</span><br/> <span className='gray'>// Typescript support is coming</span>
                 </Typography>
               </div>
             </div>
-            <RouterButton
-              variant="contained"
-              className='large'
-              to={ROUTES.SIGN_IN}
-            >
-              <Typography variant='button'>START INTEGRATION</Typography>
-            </RouterButton>
+            <div className='sm-center'>
+              <RouterButton
+                variant="contained"
+                className='large'
+                to={ROUTES.SIGN_IN}
+              >
+                <Typography variant='button'>START INTEGRATION</Typography>
+              </RouterButton>
+            </div>
           </div>
           <div className='content-block sm-mb-95 md-mb-150 lg-ml-40'>
             <div className='image-container'>
@@ -48,7 +52,7 @@ export default function Content() {
         <div className='section-container space-around lg-mb-450'>
           <div className='content-block md-mb-150'>
             <div className='image-container'>
-              <img src={screenshot1} className='shadowed-image'></img>
+              <img src={screenshot2} className='shadowed-image'></img>
             </div>
           </div>
           <div className='content-block sm-mb-95 md-mb-150 lg-ml-40'>
@@ -65,12 +69,14 @@ export default function Content() {
                 </Typography>
               </div>
             </div>
-            <Button
-              variant="contained"
-              href='https://www.youtube.com/watch?v=lxW4tBuhCl8'
-            >
-              <Typography variant='button'>DEMO</Typography>
-            </Button>
+            <div className='sm-center'>
+              <Button
+                variant="contained"
+                href='https://bit.ly/3s9glpN'
+              >
+                <Typography variant='button'>DEMO</Typography>
+              </Button>
+            </div>
           </div>
         </div>
 
@@ -89,17 +95,19 @@ export default function Content() {
                 </Typography>
               </div>
             </div>
-            <RouterButton
-              variant="contained"
-              className='reversed'
-              to={ROUTES.SIGN_IN}
-            >
-              <Typography variant='button'>GET STARTED</Typography>
-            </RouterButton>
+            <div className='sm-center'>
+              <RouterButton
+                variant="contained"
+                className='reversed'
+                to={ROUTES.SIGN_IN}
+              >
+                <Typography variant='button'>GET STARTED</Typography>
+              </RouterButton>
+            </div>
           </div>
           <div className='content-block md-mb-150 lg-ml-40'>
             <div className='image-container'>
-              <img src={screenshot1} className='shadowed-image'></img>
+              <img src={screenshot3} className='shadowed-image'></img>
             </div>
           </div>
         </div>
@@ -165,7 +173,7 @@ export default function Content() {
                   Typescript support
                 </Typography>
                 <Typography variant='body1' className='gray'>
-                  / Coming soon
+                  // Coming soon
                 </Typography>
               </Card>
             </div>
@@ -194,10 +202,10 @@ export default function Content() {
 
         <div className='section-container center'>
           <div className='column-direction center'>
-            <Typography variant='h3' className='mb-8 sm-center'>
+            <Typography variant='h3' className='mb-8 sm-text-center'>
               Get rid of routine and focus on features!
             </Typography>
-            <Typography variant='body1' className='mb-45 sm-center'>
+            <Typography variant='body1' className='mb-45 sm-text-center'>
               Perfect solution for your JavaScript projects.
             </Typography>
             <RouterButton

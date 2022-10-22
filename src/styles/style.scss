@@ -13,6 +13,19 @@
 
 @font-face {
   font-family: 'Roboto';
+  font-style: lighter;
+  font-weight: 300;
+  src: url('../assets/fonts/Roboto/roboto-v30-latin-300.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../assets/fonts/Roboto/roboto-v30-latin-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../assets/fonts/Roboto/roboto-v30-latin-300.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../assets/fonts/Roboto/roboto-v30-latin-300.woff') format('woff'), /* Modern Browsers */
+       url('../assets/fonts/Roboto/roboto-v30-latin-300.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../assets/fonts/Roboto/roboto-v30-latin-300.svg#Roboto') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+  font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
   src: url('../assets/fonts/Roboto/roboto-v30-latin-regular.eot'); /* IE9 Compat Modes */
@@ -88,6 +101,10 @@ $darkGray: #6C6C6C;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.semi-bold {
+  font-weight: 400;
 }
 
 .bold {
@@ -221,8 +238,17 @@ img {
     margin-bottom: 150px;
   }
 
-  .sm-center {
+  .sm-text-center {
     text-align: center;
+  }
+
+  .page-container {
+    background-image:
+      url('../assets/images/background/right-bg.svg'),
+      url('../assets/images/background/right-bg.svg');
+    background-repeat: no-repeat;
+    background-position: top -280px left -310px, top 1400px left 10px;
+    background-size: 120%, 160%;
   }
 }
 
@@ -248,8 +274,13 @@ img {
     padding-top: 27px;
   }
 
-  .sm-center {
+  .sm-text-center {
     text-align: center;
+  }
+
+  .sm-center {
+    display: flex;
+    justify-content: center;
   }
 
   .page-container {
@@ -257,8 +288,8 @@ img {
       url('../assets/images/background/right-bg.svg'),
       url('../assets/images/background/right-bg.svg');
     background-repeat: no-repeat;
-    background-position: top -160px left -310px, top 1400px left 10px;
-    background-size: 170%, 180%;
+    background-position: top -80px left -230px, top 1400px left 10px;
+    background-size: 450px, 900px;
   }
 }
 

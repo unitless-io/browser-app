@@ -15,6 +15,7 @@ const robotoFontFamily = {
     'Arial',
     'sans-serif',
   ].join(','),
+  fontWeight: 300,
 };
 
 // A custom theme for this app

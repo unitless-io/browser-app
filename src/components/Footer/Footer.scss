@@ -35,15 +35,32 @@
 
   .MuiButton-root {
     background-color: black;
-    color: white;
-    border-color: white;
     border-radius: 60px;
     width: 210px;
     height: 56px;
     box-shadow: none;
 
+    .MuiTypography-root {
+      color: inherit !important;
+    }
+  }
+
+  .MuiTypography-root, .MuiButton-root {
+    color: white;
+    border-color: white;
+
     &:hover {
-      border-color: white;
+      border-color: $lightGreen;
+      color: $lightGreen;
+    }
+  }
+}
+
+@media screen and (min-width: 577px) and (max-width: 1024px) {
+  .footer {
+    .social-media-links {
+      flex-direction: column;
+      gap: 15px;
     }
   }
 }

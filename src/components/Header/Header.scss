@@ -8,12 +8,31 @@
     align-items: center;
     gap: 7px;
   }
+
+  .MuiTypography-root {
+    color: black;
+    font-weight: 400;
+  }
+
+  svg path {
+    display: none;
+  }
+
+  svg rect {
+    stroke-width: 4;
+  }
 }
 
 @media screen and (max-width: 576px) {
   .header {
     .MuiTypography-root {
-      display: none;
+      .MuiTypography-root {
+        display: none;
+      }
+    }
+
+    svg path {
+      display: inline;
     }
   }
 }

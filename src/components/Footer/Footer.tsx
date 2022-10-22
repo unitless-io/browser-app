@@ -1,4 +1,4 @@
-import { ReactComponent as Logo } from '../../assets/images/logos/logo-white.svg';
+import { ReactComponent as Logo } from '../../assets/images/logo/logo.svg';
 import { ReactComponent as MailIcon } from '../../assets/images/icons/mail-icon.svg';
 import { ReactComponent as TwitterIcon } from '../../assets/images/icons/twitter-icon.svg';
 import { ReactComponent as WhatsappIcon } from '../../assets/images/icons/whatsapp-icon.svg';
@@ -14,9 +14,9 @@ export default function Footer() {
   return (
     <div className='footer'>
       <div className='responsive-container'>
-        <div className='logo'>
+        <Link href='/' className='logo'>
           <Logo />
-        </div>
+        </Link>
 
         <div className='content-links'>
           <RouterLink
@@ -50,15 +50,15 @@ export default function Footer() {
         </div>
 
         <div className='social-media-links'>
-          <Link href='#'>
+          <Link href='mailto:unitless.io@gmail.com'>
             <MailIcon className='social-media-icon'/>
           </Link>
-          <Link href='#'>
+          <Link href='https://bit.ly/3EZRCvK'>
             <TwitterIcon className='social-media-icon'/>
           </Link>
-          <Link href='#'>
+          {/* <Link href='#'>
             <WhatsappIcon className='social-media-icon'/>
-          </Link>
+          </Link> */}
         </div>
       </div>
     </div>

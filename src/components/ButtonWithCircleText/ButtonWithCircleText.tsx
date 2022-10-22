@@ -7,7 +7,7 @@ export default function Card() {
   return (
     <div className='button-with-circle-text'>
       <IconButton
-        href='https://www.youtube.com/watch?v=lxW4tBuhCl8'
+        href='https://bit.ly/3s9glpN'
       >
         <PlayArrowIcon />
       </IconButton>
