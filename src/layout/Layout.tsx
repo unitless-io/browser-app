@@ -1,22 +1,22 @@
-import { useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 
-import { userResponseSelector } from '../api/requests/user';
 import ResponsiveAppBar from '../components/ResponsiveAppBar';
 import { useRedirectToSignIn } from '../hooks/use-redirect-to-sign-in';
+import { NO_APP_LAYOUT_ROUTES } from '../router/constants';
 
 export default function Layout(props: any) {
+  const location = useLocation();
+
   useRedirectToSignIn();
 
-  const user = useSelector(userResponseSelector);
-
-  if (!user) {
-    return <>{ props.children }</>;
+  if (NO_APP_LAYOUT_ROUTES.has(location.pathname)) {
+    return <>{props.children}</>;
   }
 
   return (
     <>
       <ResponsiveAppBar />
-      { props.children }
+      {props.children}
     </>
   );
 }

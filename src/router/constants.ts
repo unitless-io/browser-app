@@ -9,4 +9,6 @@ export enum ROUTES {
   PAYMENTS = '/payments',
 }
 
-export const NO_AUTH_ROUTES = new Set<string>([ROUTES.PRIVACY_POLICY, ROUTES.TERMS]);
+export const NO_AUTH_ROUTES = new Set<string>([ROUTES.PRIVACY_POLICY, ROUTES.TERMS, ROUTES.LOGIN_ERROR, ROUTES.HOME]);
+
+export const NO_APP_LAYOUT_ROUTES = new Set<string>([ROUTES.HOME, ROUTES.SIGN_IN, ROUTES.LOGIN_ERROR]);
