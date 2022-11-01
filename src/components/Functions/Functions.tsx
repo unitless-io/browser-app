@@ -23,14 +23,14 @@ const Functions = ({ fileId }: { fileId: string }) => {
 
   return (
     <List disablePadding={true}>
-      {functions.map((func) => (
-        <div key={func.name}>
+      {functions.map((funcName) => (
+        <div key={funcName}>
           <ListItem>
             <ListItemIcon>
               <CodeIcon />
             </ListItemIcon>
-            <ListItemButton component={Link} to={`/file/${fileId}/function/${func.name}`}>
-              <ListItemText primary={`${func.name}`} />
+            <ListItemButton component={Link} to={`/file/${fileId}/function/${funcName}`}>
+              <ListItemText primary={`${funcName}`} />
             </ListItemButton>
           </ListItem>
         </div>
