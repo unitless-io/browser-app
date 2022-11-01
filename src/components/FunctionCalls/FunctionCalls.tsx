@@ -5,10 +5,13 @@ import prop from 'ramda/src/prop';
 import { DataGrid, GridColDef, GridRenderCellParams } from '@mui/x-data-grid';
 import Button from '@mui/material/Button';
 
-
-import { FunctionId } from '../../types/api/queryParams';
-import { GettingStarted } from '../GettingStarted';
-import { unitTestsFileResponseSelector, functionCallsResponseSelector, loadFunctionCallsAction } from '../../api/requests';
+import { FunctionId } from '@app/types/api/queryParams';
+import { GettingStarted } from '@app/components/GettingStarted';
+import {
+  unitTestsFileResponseSelector,
+  functionCallsResponseSelector,
+  loadFunctionCallsAction,
+} from '@app/api/requests';
 
 import FunctionCallModal from './sub-components/FunctionCallModal/FunctionCallModal';
 import FunctionCallsToolbar from './sub-components/FunctionCallsToolbar';
@@ -35,7 +38,10 @@ const getCallId = prop('_id');
 const FunctionCalls = ({ fileId, funcName }: Partial<FunctionId>) => {
   const dispatch = useDispatch();
 
-  const functionId: FunctionId | null = useMemo(() => fileId && funcName ? { fileId, funcName } : null, [fileId, funcName]);
+  const functionId: FunctionId | null = useMemo(
+    () => (fileId && funcName ? { fileId, funcName } : null),
+    [fileId, funcName]
+  );
   const allFunctionsCalls = useSelector(functionCallsResponseSelector);
   const functionCalls = functionId ? allFunctionsCalls(functionId) : [];
   const [selectedCallIds, updateSelection] = useState(new Set<string>());
