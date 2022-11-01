@@ -1,6 +1,6 @@
-import GtmTrustModal from './components/GtmTrustModal';
-import Loading from './components/Loading';
-import Router from './router';
+import GtmTrustModal from '@app/components/GtmTrustModal';
+import Loading from '@app/components/Loading';
+import Router from '@app/router';
 
 const App = () => {
   return (
