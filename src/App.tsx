@@ -1,4 +1,4 @@
-import GtmTrustModal from '@app/components/GtmTrustModal';
+import GtmAlertDialog from '@app/components/GtmAlertDialog';
 import Loading from '@app/components/Loading';
 import Router from '@app/router';
 
@@ -7,7 +7,7 @@ const App = () => {
     <>
       <Router />
       <Loading />
-      <GtmTrustModal />
+      <GtmAlertDialog />
     </>
   );
 };
