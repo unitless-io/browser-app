@@ -6,14 +6,12 @@ import { api, ENDPOINTS } from '../../index';
 
 const request = (args: FunctionId): Promise<FunctionCall[]> => api.get(ENDPOINTS.CALLS(args));
 
-export const {
-  loadDataAction: loadFunctionCallsAction,
-  responseSelector: functionCallsResponseSelector,
-} = requestsFactory({
-  request,
-  stateRequestKey: 'function-calls',
-  serializeRequestParameters: ({ fileId, funcName }: FunctionId) => `${fileId}:${funcName}`,
-  transformResponse: (response: FunctionCall[] | undefined) => response || [],
-});
+export const { forcedLoadDataAction: loadFunctionCallsAction, responseSelector: functionCallsResponseSelector } =
+  requestsFactory({
+    request,
+    stateRequestKey: 'function-calls',
+    serializeRequestParameters: ({ fileId, funcName }: FunctionId) => `${fileId}:${funcName}`,
+    transformResponse: (response: FunctionCall[] | undefined) => response || [],
+  });
 
 export const functionCallsActions = { loadFunctionCallsAction };
