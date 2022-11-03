@@ -1,5 +1,5 @@
 import { ActionType } from 'typesafe-actions';
 
-import { apiActions } from '../../../api/requests';
+import { apiActions } from '@app/api/requests';
 
 export type ApiActions = ActionType<typeof apiActions>;

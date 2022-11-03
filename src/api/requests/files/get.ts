@@ -5,10 +5,7 @@ import { api, ENDPOINTS } from '../../index';
 
 const request = (): Promise<File[]> => api.get(ENDPOINTS.FILES);
 
-export const {
-  loadDataAction: loadFilesAction,
-  responseSelector: filesResponseSelector,
-} = requestsFactory({
+export const { forcedLoadDataAction: loadFilesAction, responseSelector: filesResponseSelector } = requestsFactory({
   request,
   stateRequestKey: 'files',
   transformResponse: (response: File[] | undefined) => response || [],
