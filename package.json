@@ -1,7 +1,7 @@
 {
   "name": "@unitless-io/browser-app",
-  "description": "Browser application for the unitless.io software",
-  "version": "0.0.1",
+  "description": "Browser application for the @unitless-io/loader",
+  "version": "1.0.0",
   "files": [
     "build"
   ],
@@ -14,11 +14,27 @@
     "prettier-check": "prettier --ignore-path .gitignore --check \"./**/*.ts\" \"./**/*.tsx\" \"./**/*.json\"",
     "prepare": "npm run build"
   },
-  "author": "unitless-io",
+  "contributors": [
+    {
+      "name": "Vlad Surahin",
+      "email": "v.suragin@gmail.com",
+      "url": "https://github.com/vinlaud"
+    },
+    {
+      "name": "Siarhei Smantsar",
+      "email": "siarhei.smantsar@gmail.com",
+      "url": "https://github.com/SIARHEI-SMANTSAR"
+    }
+  ],
   "license": "Apache-2.0 license",
-  "engines": {
-    "node": ">=16"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unitless-io/browser-app.git"
   },
+  "bugs": {
+    "url": "https://github.com/unitless-io/browser-app/issues"
+  },
+  "homepage": "https://github.com/unitless-io/browser-app#readme",
   "eslintConfig": {
     "extends": [
       "react-app",
