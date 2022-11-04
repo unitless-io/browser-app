@@ -9,6 +9,8 @@ import List from '@mui/material/List';
 import { Link } from 'react-router-dom';
 
 import { functionsResponseSelector, loadFunctionsAction } from '@app/api/requests/functions';
+import Typography from '@mui/material/Typography';
+import * as React from 'react';
 
 const Functions = ({ fileId }: { fileId: string }) => {
   const dispatch = useDispatch();
@@ -22,20 +24,23 @@ const Functions = ({ fileId }: { fileId: string }) => {
   }, [dispatch, fileId]);
 
   return (
-    <List disablePadding={true}>
-      {functions.map((funcName) => (
-        <div key={funcName}>
-          <ListItem>
-            <ListItemIcon>
-              <CodeIcon />
-            </ListItemIcon>
-            <ListItemButton component={Link} to={`/file/${fileId}/function/${funcName}`}>
-              <ListItemText primary={`${funcName}`} />
-            </ListItemButton>
-          </ListItem>
-        </div>
-      ))}
-    </List>
+    <>
+      <Typography variant="subtitle2">Functions</Typography>
+      <List disablePadding={true}>
+        {functions.map((funcName) => (
+          <div key={funcName}>
+            <ListItem>
+              <ListItemIcon>
+                <CodeIcon />
+              </ListItemIcon>
+              <ListItemButton component={Link} to={`/file/${fileId}/function/${funcName}`}>
+                <ListItemText primary={`${funcName}`} />
+              </ListItemButton>
+            </ListItem>
+          </div>
+        ))}
+      </List>
+    </>
   );
 };
 
