@@ -6,8 +6,10 @@ import AlertTitle from '@mui/material/AlertTitle';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
+import Box from '@mui/material/Box';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
+import TroubleshootIcon from '@mui/icons-material/Troubleshoot';
 
 const style = {
   position: 'absolute' as 'absolute',
@@ -24,8 +26,8 @@ enum GTM_TRUST_VARIANTS {
   DISALLOWED = '0',
 }
 
-const TITLE = 'Use Google Tag Manager & Google Analytics services?';
-const TEXT = "Let's improve the product. This means sending your activity to GTM and GA.";
+const TITLE = 'We work hard to improve Unitless software. Do you allow us to track Unitless web interface activity?';
+const TEXT = "We do not store any of your application or personal data. We only send interface usage data to Google Analytics via GTM.";
 const DISAGREE = 'Disagree';
 const AGREE = 'Agree';
 
@@ -75,17 +77,18 @@ const GtmAlertDialog = ({ variant = GtmAlertDialogVariant.Alert }: { variant?: G
   ) : (
     (open || null) && (
       <Alert
-        severity="info"
+        severity="warning"
+        icon={<TroubleshootIcon />}
         sx={style}
         action={
-          <>
-            <Button color="inherit" size="small" sx={{ marginRight: 1 }} onClick={onDisagree}>
+          <Box alignSelf="center">
+            <Button variant="outlined" color="error" size="small" sx={{ marginRight: 1 }} onClick={onDisagree}>
               {DISAGREE}
             </Button>
-            <Button color="inherit" size="small" onClick={onAgree}>
+            <Button variant="contained" color="success" size="small" onClick={onAgree}>
               {AGREE}
             </Button>
-          </>
+          </Box>
         }
       >
         <AlertTitle>{TITLE}</AlertTitle>
