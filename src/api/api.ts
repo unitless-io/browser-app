@@ -18,7 +18,11 @@ export const api = {
         ...config,
       })
       .then(({ data }) => data),
-  getDownloadUrl: <D>(url: string, data?: D, config?: AxiosRequestConfig): Promise<{ file: string, fileName: string }> =>
+  getDownloadUrl: <D>(
+    url: string,
+    data?: D,
+    config?: AxiosRequestConfig
+  ): Promise<{ file: string; fileName: string }> =>
     instance
       .get(url, {
         params: data,
@@ -27,7 +31,7 @@ export const api = {
       })
       .then(({ data, headers }) => ({
         file: window.URL.createObjectURL(new Blob([data])),
-        fileName: extractFileName(headers['content-disposition'])
+        fileName: extractFileName(headers['content-disposition']),
       })),
   post: <D, R>(url: string, data?: D, config?: AxiosRequestConfig): Promise<R> =>
     instance.post(url, data, config).then(({ data }) => data),

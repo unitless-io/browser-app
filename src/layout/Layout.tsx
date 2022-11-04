@@ -4,7 +4,7 @@ export default function Layout(props: any) {
   return (
     <>
       <ResponsiveAppBar />
-      { props.children }
+      {props.children}
     </>
   );
 }
