@@ -27,7 +27,8 @@ enum GTM_TRUST_VARIANTS {
 }
 
 const TITLE = 'We work hard to improve Unitless software. Do you allow us to track Unitless web interface activity?';
-const TEXT = "We do not store any of your application or personal data. We only send interface usage data to Google Analytics via GTM.";
+const TEXT =
+  'We do not store any of your application or personal data. We only send interface usage data to Google Analytics via GTM.';
 const DISAGREE = 'Disagree';
 const AGREE = 'Agree';
 

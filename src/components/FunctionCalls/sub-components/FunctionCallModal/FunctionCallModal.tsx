@@ -42,7 +42,10 @@ const FunctionCallModal = ({ fileId, funcName }: Partial<FunctionId>) => {
     setSearchParams(searchParams);
   }, [searchParams, setSearchParams]);
 
-  const functionId: FunctionId | null = useMemo(() => fileId && funcName ? { fileId, funcName } : null, [fileId, funcName]);
+  const functionId: FunctionId | null = useMemo(
+    () => (fileId && funcName ? { fileId, funcName } : null),
+    [fileId, funcName]
+  );
   const allFunctionsCalls = useSelector(functionCallsResponseSelector);
   const functionCalls = functionId ? allFunctionsCalls(functionId) : [];
   const targetCall = functionCalls.find(propEq('_id', callId));

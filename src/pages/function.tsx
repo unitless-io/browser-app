@@ -7,11 +7,15 @@ import FunctionInfo from '../components/FunctionInfo/FunctionInfo';
 
 const Function = (props: any) => {
   const { fileId, funcName } = useParams();
-  return <Container maxWidth="md">
-    <FunctionInfo fileId={fileId} funcName={funcName} />
-    <Typography variant="h5" sx={{ margin: 1 }}>Calls</Typography>
-    <FunctionCalls fileId={fileId} funcName={funcName} />
-  </Container>;
+  return (
+    <Container maxWidth="md">
+      <FunctionInfo fileId={fileId} funcName={funcName} />
+      <Typography variant="h5" sx={{ margin: 1 }}>
+        Calls
+      </Typography>
+      <FunctionCalls fileId={fileId} funcName={funcName} />
+    </Container>
+  );
 };
 
 export default Function;

@@ -21,8 +21,25 @@ const ResponsiveAppBar = () => {
           </Link>
 
           <Box sx={{ flexGrow: 1 }}></Box>
-          <Button variant="contained" startIcon={<ReviewsIcon />} color="info" href="https://forms.gle/7YtsmpjJev8opaRd6" target="_blank" sx={{ marginRight: 2 }}>Leave Feedback</Button>
-          <Button variant="contained" startIcon={<BugReportIcon />} color="warning" href="https://github.com/unitless-io/loader/issues" target="_blank">Report bug</Button>
+          <Button
+            variant="contained"
+            startIcon={<ReviewsIcon />}
+            color="info"
+            href="https://forms.gle/7YtsmpjJev8opaRd6"
+            target="_blank"
+            sx={{ marginRight: 2 }}
+          >
+            Leave Feedback
+          </Button>
+          <Button
+            variant="contained"
+            startIcon={<BugReportIcon />}
+            color="warning"
+            href="https://github.com/unitless-io/loader/issues"
+            target="_blank"
+          >
+            Report bug
+          </Button>
         </Toolbar>
       </Container>
     </AppBar>
