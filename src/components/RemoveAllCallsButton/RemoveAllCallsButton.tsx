@@ -13,8 +13,8 @@ const RemoveAllCallsButton = () => {
   }, [dispatch]);
 
   return (
-    <Button variant="outlined" color="inherit" startIcon={<DeleteIcon />} onClick={onClick}>
-      Remove all calls
+    <Button size="small" variant="outlined" color="error" startIcon={<DeleteIcon />} onClick={onClick}>
+      Delete all calls
     </Button>
   );
 };

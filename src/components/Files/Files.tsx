@@ -7,6 +7,7 @@ import ListItemText from '@mui/material/ListItemText';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import FileIcon from '@mui/icons-material/InsertDriveFile';
 import Collapse from '@mui/material/Collapse';
+import Box from '@mui/material/Box';
 
 import { filesResponseSelector, loadFilesAction } from '@app/api/requests';
 import useLocalStorageState from '@app/hooks/use-local-storage-state';
@@ -15,6 +16,7 @@ import useInit from '@app/hooks/use-init';
 import Functions from '../Functions/Functions';
 import { GettingStarted } from '../GettingStarted';
 import * as React from 'react';
+import RemoveAllCallsButton from '@app/components/RemoveAllCallsButton';
 
 const Files = () => {
   useInit(loadFilesAction);
@@ -24,7 +26,10 @@ const Files = () => {
 
   return allFiles.length > 0 ? (
     <>
-      <Typography variant="h6">Files</Typography>
+      <Box display="flex" justifyContent="space-between">
+        <Typography variant="h6">Files</Typography>
+        <RemoveAllCallsButton />
+      </Box>
       <List disablePadding={true}>
         {allFiles.map((file) => (
           <div key={file._id}>
