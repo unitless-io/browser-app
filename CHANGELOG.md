@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.0.1 (2022-11-09)
+
+
+### Features
+
+* add [@app](https://github.com/app) alias ([8d11ce6](https://github.com/unitless-io/browser-app/commit/8d11ce6d4b2f825a575c796866c26abfca4ea7a0))
+* add delete all calls button to home page ([6e2d3ca](https://github.com/unitless-io/browser-app/commit/6e2d3caea4f135e769f2dda0ecd1c021eb0f1cfe))
+* add feedback and bug buttons ([396cabb](https://github.com/unitless-io/browser-app/commit/396cabbf48c4be2e1d84d9a750693b3f56a5a47f))
+* add getBrowserAppPath ([f756ca1](https://github.com/unitless-io/browser-app/commit/f756ca168b074b89502493eb8c65c0fefdb7c5df))
+* add GtmAlertDialog ([ff5995f](https://github.com/unitless-io/browser-app/commit/ff5995fb732cd8011e0f58d4ed06f5fc0e835b0b))
+* add GtmTrustModal ([8f322cd](https://github.com/unitless-io/browser-app/commit/8f322cdc82db9fda5759f72ffeb0e328c8d8ffbd))
+* add RemoveAllCallsButton ([d93780f](https://github.com/unitless-io/browser-app/commit/d93780f46007ee4c2bb1960ec4c709612227ccec))
+* improve analytics consent ([4283664](https://github.com/unitless-io/browser-app/commit/4283664d8cc94c80dc0a39a3f036b34fe2d8748a))
+
+
+### Bug Fixes
+
+* getting started guide ([52b5b32](https://github.com/unitless-io/browser-app/commit/52b5b3269a6df0f7169aa96787ef8bb607b468a3))
+* handle functions endpoint changes ([9c4c311](https://github.com/unitless-io/browser-app/commit/9c4c3110fd7fd31aef305df6711f05d09944abb2))
+
 ## 1.0.0 (2022-11-04)
 
 
